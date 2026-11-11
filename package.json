@@ -1,0 +1,57 @@
+{
+	"name": "@max13/n8n-nodes-ssl-checker-standalone",
+	"version": "1.0.0",
+	"description": "Check SSL/TLS certificates from n8n workflows",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Max13/n8n-nodes-ssl-checker-standalone.git"
+	},
+	"homepage": "https://www.npmjs.com/package/@max13/n8n-nodes-ssl-checker-standalone",
+	"author": {
+		"name": "Adnan RIHAN",
+		"email": "adnan@rihan.fr"
+	},
+	"keywords": [
+		"n8n-community-node-package",
+		"ssl",
+		"tls",
+		"certificate"
+	],
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist/nodes/**/*",
+		"dist/icons/**/*"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"nodes": [
+			"dist/nodes/SslChecker/SslChecker.node.js"
+		]
+	},
+	"dependencies": {
+		"ssl-checker": "^3.0.1"
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "*",
+		"release-it": "^21.1.0",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}
