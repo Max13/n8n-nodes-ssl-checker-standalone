@@ -94,21 +94,6 @@ export class SslChecker implements INodeType {
 				displayOptions: { show: { protocol: ['https'] } },
 			},
 			{
-				displayName: 'Timeout',
-				name: 'timeout',
-				type: 'number',
-				default: 10000,
-				typeOptions: { minValue: 1 },
-				description: 'Connection timeout in milliseconds',
-			},
-			{
-				displayName: 'Reject Unauthorized',
-				name: 'rejectUnauthorized',
-				type: 'boolean',
-				default: false,
-				description: 'Whether to fail the check when the certificate is not trusted',
-			},
-			{
 				displayName: 'Include Subject Alternative Names',
 				name: 'validateSubjectAltName',
 				type: 'boolean',
@@ -157,8 +142,6 @@ export class SslChecker implements INodeType {
 			const operation = this.getNodeParameter('operation', itemIndex) as string;
 			const options: Parameters<typeof sslChecker>[1] = {
 				protocol: this.getNodeParameter('protocol', itemIndex) as 'https' | 'smtp' | 'imap' | 'pop3' | 'ftp',
-				timeout: this.getNodeParameter('timeout', itemIndex) as number,
-				rejectUnauthorized: this.getNodeParameter('rejectUnauthorized', itemIndex) as boolean,
 				validateSubjectAltName: this.getNodeParameter('validateSubjectAltName', itemIndex) as boolean,
 				grade: this.getNodeParameter('grade', itemIndex) as boolean,
 			};

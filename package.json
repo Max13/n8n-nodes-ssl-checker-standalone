@@ -1,6 +1,6 @@
 {
 	"name": "@max13/n8n-nodes-ssl-checker-standalone",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Check SSL/TLS certificates from n8n workflows",
 	"license": "MIT",
 	"publishConfig": {

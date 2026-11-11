@@ -6,7 +6,7 @@ An n8n community node for checking SSL/TLS certificates with [`ssl-checker`](htt
 
 - Check one hostname or a newline-separated batch.
 - HTTPS, SMTP, IMAP, POP3, and FTP via STARTTLS.
-- Configure port, HTTPS method, timeout, certificate trust behavior, SNI server name, and subject alternative name output.
+- Configure port, HTTPS method, SNI server name, and subject alternative name output.
 - Optionally include expiration warnings and a TLS security grade.
 - Return certificate validity, dates, issuer, subject, fingerprint, serial number, chain, negotiated TLS details, HSTS, and other fields provided by the dependency.
 
@@ -24,4 +24,4 @@ n8n installs the package and its `ssl-checker` dependency. The n8n host must mee
 
 Choose **Check** and provide a hostname without a URL scheme or path, or choose **Check Many** and enter one hostname per line. Each output item contains the hostname plus the fields returned by `ssl-checker`. Batch failures are returned as items with an `error` field so successful checks remain available.
 
-Port `0` uses the dependency's protocol default. The `rejectUnauthorized` option defaults to false, matching `ssl-checker`; enable it when the check should fail on an untrusted certificate. The optional TLS grade performs additional active connection probes.
+Port `0` uses the dependency's protocol default. The optional TLS grade performs additional active connection probes.
